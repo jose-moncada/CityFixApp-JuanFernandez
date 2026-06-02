@@ -22,5 +22,10 @@ describe('CityFix - Conexión E2E con Supabase', () => {
     expect(first).toHaveProperty('category');
     expect(first).toHaveProperty('votes');
   });
-
+  
+  test('Ver datos obtenidos', async () => {
+    const reports = await getReports();
+    console.log(reports);
+    expect(reports.length).toBeGreaterThan(0);
+  });
 });
